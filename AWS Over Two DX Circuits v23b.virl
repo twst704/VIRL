@@ -8,7 +8,7 @@
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:02:04 UTC Sun Jun 5 2016
+! Last configuration change at 03:00:29 UTC Sun Jun 5 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -76,7 +76,7 @@ interface Loopback20
  ip address 10.172.20.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 172.16.11.53 255.255.255.0
+ ip address 172.16.11.71 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -149,7 +149,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:13:10 UTC Sun Jun 5 2016
+! Last configuration change at 03:00:41 UTC Sun Jun 5 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -210,7 +210,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 172.16.11.55 255.255.255.0
+ ip address 172.16.11.73 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -321,9 +321,9 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:10:43 UTC Sun Jun 5 2016
+! Last configuration change at 03:00:36 UTC Sun Jun 5 2016
 !
-version 15.2
+version 15.6
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
@@ -338,6 +338,17 @@ boot-end-marker
 enable secret 5 $1$/jZA$7ttrSqT/h9m8CgjCz/hcF1
 !
 no aaa new-model
+ethernet lmi ce
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
 !
 !
 !
@@ -349,12 +360,14 @@ no aaa new-model
 ip cef
 no ipv6 cef
 !
+multilink bundle-name authenticated
 !
 !
-spanning-tree mode rapid-pvst
-spanning-tree extend system-id
 !
-vlan internal allocation policy ascending
+!
+!
+redundancy
+!
 !
 ! 
 !
@@ -369,38 +382,38 @@ vlan internal allocation policy ascending
 !
 !
 !
+interface GigabitEthernet0/0
+ ip address 172.16.11.72 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
 interface GigabitEthernet0/1
  description PHX-7K1 770 Interface
- switchport access vlan 770
+ no ip address
+ duplex auto
+ speed auto
  media-type rj45
- negotiation auto
- spanning-tree portfast edge
 !
 interface GigabitEthernet0/2
  description PHX-AWS-RT1 770 Interface
- switchport access vlan 770
+ no ip address
+ duplex auto
+ speed auto
  media-type rj45
- negotiation auto
- spanning-tree portfast edge
 !
 interface GigabitEthernet0/3
  description PHX-AWS-RT2 770 Interface
- switchport access vlan 770
+ no ip address
+ duplex auto
+ speed auto
  media-type rj45
- negotiation auto
- spanning-tree portfast edge
-!
-interface GigabitEthernet0/0
- no switchport
- ip address 172.16.11.54 255.255.255.0
- negotiation auto
 !
 ip forward-protocol nd
 !
+!
 no ip http server
 no ip http secure-server
-!
-!
 !
 !
 !
@@ -442,6 +455,7 @@ line vty 0 4
  login
  transport input all
 !
+no scheduler allocate
 !
 end</entry>
         </extensions>
@@ -453,7 +467,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:20:09 UTC Sun Jun 5 2016
+! Last configuration change at 03:00:46 UTC Sun Jun 5 2016
 !
 version 15.6
 service timestamps debug datetime msec
@@ -529,7 +543,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 172.16.11.56 255.255.255.0
+ ip address 172.16.11.74 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -683,7 +697,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:35:11 UTC Sun Jun 5 2016
+! Last configuration change at 03:00:48 UTC Sun Jun 5 2016
 !
 version 15.2
 service timestamps debug datetime msec
@@ -754,7 +768,7 @@ interface GigabitEthernet0/3
 !
 interface GigabitEthernet0/0
  no switchport
- ip address 172.16.11.54 255.255.255.0
+ ip address 172.16.11.75 255.255.255.0
  negotiation auto
 !
 ip forward-protocol nd
@@ -815,7 +829,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:15:53 UTC Sun Jun 5 2016
+! Last configuration change at 03:01:03 UTC Sun Jun 5 2016
 !
 version 15.2
 service timestamps debug datetime msec
@@ -886,7 +900,7 @@ interface GigabitEthernet0/3
 !
 interface GigabitEthernet0/0
  no switchport
- ip address 172.16.11.60 255.255.255.0
+ ip address 172.16.11.78 255.255.255.0
  negotiation auto
 !
 ip forward-protocol nd
@@ -946,21 +960,131 @@ end</entry>
     <node name="server-1" type="SIMPLE" subtype="server" location="299,231">
         <extensions>
             <entry key="AutoNetkit.ibgp_role" type="String">RR</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">#cloud-config
+bootcmd:
+- ln -s -t /etc/rc.d /etc/rc.local
+hostname: server-1
+manage_etc_hosts: true
+runcmd:
+- start ttyS0
+- systemctl start getty@ttyS0.service
+- systemctl start rc-local
+- sed -i '/^\s*PasswordAuthentication\s\+no/d' /etc/ssh/sshd_config
+- echo "UseDNS no" &gt;&gt; /etc/ssh/sshd_config
+- service ssh restart
+- service sshd restart
+users:
+- default
+- gecos: User configured by VIRL Configuration Engine 0.21.7
+  lock-passwd: false
+  name: cisco
+  plain-text-passwd: cisco
+  shell: /bin/bash
+  ssh-authorized-keys:
+  - VIRL-USER-SSH-PUBLIC-KEY
+  sudo: ALL=(ALL) ALL
+write_files:
+- path: /etc/init/ttyS0.conf
+  owner: root:root
+  content: |
+    # ttyS0 - getty
+    # This service maintains a getty on ttyS0 from the point the system is
+    # started until it is shut down again.
+    start on stopped rc or RUNLEVEL=[12345]
+    stop on runlevel [!12345]
+    respawn
+    exec /sbin/getty -L 115200 ttyS0 vt102
+  permissions: '0644'
+- path: /etc/systemd/system/dhclient@.service
+  content: |
+    [Unit]
+    Description=Run dhclient on %i interface
+    After=network.target
+    [Service]
+    Type=oneshot
+    ExecStart=/sbin/dhclient %i -pf /var/run/dhclient.%i.pid -lf /var/lib/dhclient/dhclient.%i.lease
+    RemainAfterExit=yes
+  owner: root:root
+  permissions: '0644'
+- path: /etc/rc.local
+  owner: root:root
+  permissions: '0755'
+  content: |-
+    #!/bin/sh
+    ifconfig eth1 up 10.0.128.2 netmask 255.255.255.248
+    route add -net 10.0.0.0/16 gw 10.0.128.1 dev eth1
+    route add -net 192.168.0.0/29 gw 10.0.128.1 dev eth1
+    exit 0
+</entry>
         </extensions>
-        <interface id="0" name="eth1"/>
+        <interface id="0" name="eth1" ipv4="10.0.128.2" netPrefixLenV4="29"/>
     </node>
     <node name="server-2" type="SIMPLE" subtype="server" location="452,233">
         <extensions>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">#cloud-config
+bootcmd:
+- ln -s -t /etc/rc.d /etc/rc.local
+hostname: server-2
+manage_etc_hosts: true
+runcmd:
+- start ttyS0
+- systemctl start getty@ttyS0.service
+- systemctl start rc-local
+- sed -i '/^\s*PasswordAuthentication\s\+no/d' /etc/ssh/sshd_config
+- echo "UseDNS no" &gt;&gt; /etc/ssh/sshd_config
+- service ssh restart
+- service sshd restart
+users:
+- default
+- gecos: User configured by VIRL Configuration Engine 0.21.7
+  lock-passwd: false
+  name: cisco
+  plain-text-passwd: cisco
+  shell: /bin/bash
+  ssh-authorized-keys:
+  - VIRL-USER-SSH-PUBLIC-KEY
+  sudo: ALL=(ALL) ALL
+write_files:
+- path: /etc/init/ttyS0.conf
+  owner: root:root
+  content: |
+    # ttyS0 - getty
+    # This service maintains a getty on ttyS0 from the point the system is
+    # started until it is shut down again.
+    start on stopped rc or RUNLEVEL=[12345]
+    stop on runlevel [!12345]
+    respawn
+    exec /sbin/getty -L 115200 ttyS0 vt102
+  permissions: '0644'
+- path: /etc/systemd/system/dhclient@.service
+  content: |
+    [Unit]
+    Description=Run dhclient on %i interface
+    After=network.target
+    [Service]
+    Type=oneshot
+    ExecStart=/sbin/dhclient %i -pf /var/run/dhclient.%i.pid -lf /var/lib/dhclient/dhclient.%i.lease
+    RemainAfterExit=yes
+  owner: root:root
+  permissions: '0644'
+- path: /etc/rc.local
+  owner: root:root
+  permissions: '0755'
+  content: |-
+    #!/bin/sh
+    ifconfig eth1 up 10.0.128.3 netmask 255.255.255.248
+    route add -net 10.0.0.0/16 gw 10.0.128.1 dev eth1
+    route add -net 192.168.0.0/29 gw 10.0.128.1 dev eth1
+    exit 0
+</entry>
         </extensions>
-        <interface id="0" name="eth1"/>
+        <interface id="0" name="eth1" ipv4="10.0.128.3" netPrefixLenV4="29"/>
     </node>
     <node name="AWS-VPC-SW1" type="SIMPLE" subtype="IOSvL2" location="364,116">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 02:27:39 UTC Sun Jun 5 2016
+! Last configuration change at 03:00:20 UTC Sun Jun 5 2016
 !
 version 15.2
 service timestamps debug datetime msec
@@ -1024,7 +1148,7 @@ interface GigabitEthernet0/3
 !
 interface GigabitEthernet0/0
  no switchport
- ip address 172.16.11.52 255.255.255.0
+ ip address 172.16.11.70 255.255.255.0
  negotiation auto
 !
 ip forward-protocol nd
