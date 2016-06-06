@@ -4,9 +4,9 @@
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Tue Jul 28 16:55:00 2015
+!Time: Mon Jun  6 00:02:47 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 license grace-period
 
@@ -82,132 +82,175 @@ interface Ethernet2/5
 
 interface Ethernet2/6
   switchport
+  no shutdown
 
 interface Ethernet2/7
   switchport
+  no shutdown
 
 interface Ethernet2/8
   switchport
+  no shutdown
 
 interface Ethernet2/9
   switchport
+  no shutdown
 
 interface Ethernet2/10
   switchport
+  no shutdown
 
 interface Ethernet2/11
   switchport
+  no shutdown
 
 interface Ethernet2/12
   switchport
+  no shutdown
 
 interface Ethernet2/13
   switchport
+  no shutdown
 
 interface Ethernet2/14
   switchport
+  no shutdown
 
 interface Ethernet2/15
   switchport
+  no shutdown
 
 interface Ethernet2/16
   switchport
+  no shutdown
 
 interface Ethernet2/17
   switchport
+  no shutdown
 
 interface Ethernet2/18
   switchport
+  no shutdown
 
 interface Ethernet2/19
   switchport
+  no shutdown
 
 interface Ethernet2/20
   switchport
+  no shutdown
 
 interface Ethernet2/21
   switchport
+  no shutdown
 
 interface Ethernet2/22
   switchport
+  no shutdown
 
 interface Ethernet2/23
   switchport
+  no shutdown
 
 interface Ethernet2/24
   switchport
+  no shutdown
 
 interface Ethernet2/25
   switchport
+  no shutdown
 
 interface Ethernet2/26
   switchport
+  no shutdown
 
 interface Ethernet2/27
   switchport
+  no shutdown
 
 interface Ethernet2/28
   switchport
+  no shutdown
 
 interface Ethernet2/29
   switchport
+  no shutdown
 
 interface Ethernet2/30
   switchport
+  no shutdown
 
 interface Ethernet2/31
   switchport
+  no shutdown
 
 interface Ethernet2/32
   switchport
+  no shutdown
 
 interface Ethernet2/33
   switchport
+  no shutdown
 
 interface Ethernet2/34
   switchport
+  no shutdown
 
 interface Ethernet2/35
   switchport
+  no shutdown
 
 interface Ethernet2/36
   switchport
+  no shutdown
 
 interface Ethernet2/37
   switchport
+  no shutdown
 
 interface Ethernet2/38
   switchport
+  no shutdown
 
 interface Ethernet2/39
   switchport
+  no shutdown
 
 interface Ethernet2/40
   switchport
+  no shutdown
 
 interface Ethernet2/41
   switchport
+  no shutdown
 
 interface Ethernet2/42
   switchport
+  no shutdown
 
 interface Ethernet2/43
   switchport
+  no shutdown
 
 interface Ethernet2/44
   switchport
+  no shutdown
 
 interface Ethernet2/45
   switchport
+  no shutdown
 
 interface Ethernet2/46
   switchport
+  no shutdown
 
 interface Ethernet2/47
   switchport
+  no shutdown
 
 interface Ethernet2/48
   switchport
+  no shutdown
 
 interface Ethernet3/1
   switchport
@@ -498,8 +541,8 @@ interface Ethernet4/48
   switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
 fabricpath domain default</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
@@ -508,13 +551,13 @@ fabricpath domain default</entry>
         <interface id="3" name="Ethernet2/4"/>
         <interface id="4" name="Ethernet2/5"/>
     </node>
-    <node name="PHX-CORE-SP02" type="SIMPLE" subtype="NX-OSv" location="401,77">
+    <node name="PHX-CORE-SP02" type="SIMPLE" subtype="NX-OSv" location="504,77">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Tue Jul 28 16:53:54 2015
+!Time: Mon Jun  6 00:02:47 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 license grace-period
 
@@ -590,276 +633,367 @@ interface Ethernet2/5
 
 interface Ethernet2/6
   switchport
+  no shutdown
 
 interface Ethernet2/7
   switchport
+  no shutdown
 
 interface Ethernet2/8
   switchport
+  no shutdown
 
 interface Ethernet2/9
   switchport
+  no shutdown
 
 interface Ethernet2/10
   switchport
+  no shutdown
 
 interface Ethernet2/11
   switchport
+  no shutdown
 
 interface Ethernet2/12
   switchport
+  no shutdown
 
 interface Ethernet2/13
   switchport
+  no shutdown
 
 interface Ethernet2/14
   switchport
+  no shutdown
 
 interface Ethernet2/15
   switchport
+  no shutdown
 
 interface Ethernet2/16
   switchport
+  no shutdown
 
 interface Ethernet2/17
   switchport
+  no shutdown
 
 interface Ethernet2/18
   switchport
+  no shutdown
 
 interface Ethernet2/19
   switchport
+  no shutdown
 
 interface Ethernet2/20
   switchport
+  no shutdown
 
 interface Ethernet2/21
   switchport
+  no shutdown
 
 interface Ethernet2/22
   switchport
+  no shutdown
 
 interface Ethernet2/23
   switchport
+  no shutdown
 
 interface Ethernet2/24
   switchport
+  no shutdown
 
 interface Ethernet2/25
   switchport
+  no shutdown
 
 interface Ethernet2/26
   switchport
+  no shutdown
 
 interface Ethernet2/27
   switchport
+  no shutdown
 
 interface Ethernet2/28
   switchport
+  no shutdown
 
 interface Ethernet2/29
   switchport
+  no shutdown
 
 interface Ethernet2/30
   switchport
+  no shutdown
 
 interface Ethernet2/31
   switchport
+  no shutdown
 
 interface Ethernet2/32
   switchport
+  no shutdown
 
 interface Ethernet2/33
   switchport
+  no shutdown
 
 interface Ethernet2/34
   switchport
+  no shutdown
 
 interface Ethernet2/35
   switchport
+  no shutdown
 
 interface Ethernet2/36
   switchport
+  no shutdown
 
 interface Ethernet2/37
   switchport
+  no shutdown
 
 interface Ethernet2/38
   switchport
+  no shutdown
 
 interface Ethernet2/39
   switchport
+  no shutdown
 
 interface Ethernet2/40
   switchport
+  no shutdown
 
 interface Ethernet2/41
   switchport
+  no shutdown
 
 interface Ethernet2/42
   switchport
+  no shutdown
 
 interface Ethernet2/43
   switchport
+  no shutdown
 
 interface Ethernet2/44
   switchport
+  no shutdown
 
 interface Ethernet2/45
   switchport
+  no shutdown
 
 interface Ethernet2/46
   switchport
+  no shutdown
 
 interface Ethernet2/47
   switchport
+  no shutdown
 
 interface Ethernet2/48
   switchport
+  no shutdown
 
 interface Ethernet3/1
   switchport
+  no shutdown
 
 interface Ethernet3/2
   switchport
+  no shutdown
 
 interface Ethernet3/3
   switchport
+  no shutdown
 
 interface Ethernet3/4
   switchport
+  no shutdown
 
 interface Ethernet3/5
   switchport
+  no shutdown
 
 interface Ethernet3/6
   switchport
+  no shutdown
 
 interface Ethernet3/7
   switchport
+  no shutdown
 
 interface Ethernet3/8
   switchport
+  no shutdown
 
 interface Ethernet3/9
   switchport
+  no shutdown
 
 interface Ethernet3/10
   switchport
+  no shutdown
 
 interface Ethernet3/11
   switchport
+  no shutdown
 
 interface Ethernet3/12
   switchport
+  no shutdown
 
 interface Ethernet3/13
   switchport
+  no shutdown
 
 interface Ethernet3/14
   switchport
+  no shutdown
 
 interface Ethernet3/15
   switchport
+  no shutdown
 
 interface Ethernet3/16
   switchport
+  no shutdown
 
 interface Ethernet3/17
   switchport
+  no shutdown
 
 interface Ethernet3/18
   switchport
+  no shutdown
 
 interface Ethernet3/19
   switchport
+  no shutdown
 
 interface Ethernet3/20
   switchport
+  no shutdown
 
 interface Ethernet3/21
   switchport
+  no shutdown
 
 interface Ethernet3/22
   switchport
+  no shutdown
 
 interface Ethernet3/23
   switchport
+  no shutdown
 
 interface Ethernet3/24
   switchport
+  no shutdown
 
 interface Ethernet3/25
   switchport
+  no shutdown
 
 interface Ethernet3/26
   switchport
+  no shutdown
 
 interface Ethernet3/27
   switchport
+  no shutdown
 
 interface Ethernet3/28
   switchport
+  no shutdown
 
 interface Ethernet3/29
   switchport
+  no shutdown
 
 interface Ethernet3/30
   switchport
+  no shutdown
 
 interface Ethernet3/31
   switchport
+  no shutdown
 
 interface Ethernet3/32
   switchport
+  no shutdown
 
 interface Ethernet3/33
   switchport
+  no shutdown
 
 interface Ethernet3/34
   switchport
+  no shutdown
 
 interface Ethernet3/35
   switchport
+  no shutdown
 
 interface Ethernet3/36
   switchport
+  no shutdown
 
 interface Ethernet3/37
   switchport
+  no shutdown
 
 interface Ethernet3/38
   switchport
+  no shutdown
 
 interface Ethernet3/39
   switchport
+  no shutdown
 
 interface Ethernet3/40
   switchport
+  no shutdown
 
 interface Ethernet3/41
   switchport
+  no shutdown
 
 interface Ethernet3/42
   switchport
+  no shutdown
 
 interface Ethernet3/43
   switchport
+  no shutdown
 
 interface Ethernet3/44
   switchport
+  no shutdown
 
 interface Ethernet3/45
   switchport
+  no shutdown
 
 interface Ethernet3/46
   switchport
+  no shutdown
 
 interface Ethernet3/47
   switchport
+  no shutdown
 
 interface Ethernet3/48
   switchport
+  no shutdown
 
 interface Ethernet4/1
   switchport
@@ -1006,8 +1140,8 @@ interface Ethernet4/48
   switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
 fabricpath domain default</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
@@ -1016,13 +1150,13 @@ fabricpath domain default</entry>
         <interface id="3" name="Ethernet2/4"/>
         <interface id="4" name="Ethernet2/5"/>
     </node>
-    <node name="PHX-CORE-LE11" type="SIMPLE" subtype="NX-OSv" location="65,228">
+    <node name="PHX-CORE-LE11" type="SIMPLE" subtype="NX-OSv" location="22,228">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Tue Jul 28 16:52:36 2015
+!Time: Mon Jun  6 00:02:46 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 license grace-period
 
@@ -1088,138 +1222,183 @@ interface Ethernet2/3
 
 interface Ethernet2/4
   switchport
+  no shutdown
 
 interface Ethernet2/5
   switchport
+  no shutdown
 
 interface Ethernet2/6
   switchport
+  no shutdown
 
 interface Ethernet2/7
   switchport
+  no shutdown
 
 interface Ethernet2/8
   switchport
+  no shutdown
 
 interface Ethernet2/9
   switchport
+  no shutdown
 
 interface Ethernet2/10
   switchport
+  no shutdown
 
 interface Ethernet2/11
   switchport
+  no shutdown
 
 interface Ethernet2/12
   switchport
+  no shutdown
 
 interface Ethernet2/13
   switchport
+  no shutdown
 
 interface Ethernet2/14
   switchport
+  no shutdown
 
 interface Ethernet2/15
   switchport
+  no shutdown
 
 interface Ethernet2/16
   switchport
+  no shutdown
 
 interface Ethernet2/17
   switchport
+  no shutdown
 
 interface Ethernet2/18
   switchport
+  no shutdown
 
 interface Ethernet2/19
   switchport
+  no shutdown
 
 interface Ethernet2/20
   switchport
+  no shutdown
 
 interface Ethernet2/21
   switchport
+  no shutdown
 
 interface Ethernet2/22
   switchport
+  no shutdown
 
 interface Ethernet2/23
   switchport
+  no shutdown
 
 interface Ethernet2/24
   switchport
+  no shutdown
 
 interface Ethernet2/25
   switchport
+  no shutdown
 
 interface Ethernet2/26
   switchport
+  no shutdown
 
 interface Ethernet2/27
   switchport
+  no shutdown
 
 interface Ethernet2/28
   switchport
+  no shutdown
 
 interface Ethernet2/29
   switchport
+  no shutdown
 
 interface Ethernet2/30
   switchport
+  no shutdown
 
 interface Ethernet2/31
   switchport
+  no shutdown
 
 interface Ethernet2/32
   switchport
+  no shutdown
 
 interface Ethernet2/33
   switchport
+  no shutdown
 
 interface Ethernet2/34
   switchport
+  no shutdown
 
 interface Ethernet2/35
   switchport
+  no shutdown
 
 interface Ethernet2/36
   switchport
+  no shutdown
 
 interface Ethernet2/37
   switchport
+  no shutdown
 
 interface Ethernet2/38
   switchport
+  no shutdown
 
 interface Ethernet2/39
   switchport
+  no shutdown
 
 interface Ethernet2/40
   switchport
+  no shutdown
 
 interface Ethernet2/41
   switchport
+  no shutdown
 
 interface Ethernet2/42
   switchport
+  no shutdown
 
 interface Ethernet2/43
   switchport
+  no shutdown
 
 interface Ethernet2/44
   switchport
+  no shutdown
 
 interface Ethernet2/45
   switchport
+  no shutdown
 
 interface Ethernet2/46
   switchport
+  no shutdown
 
 interface Ethernet2/47
   switchport
+  no shutdown
 
 interface Ethernet2/48
   switchport
+  no shutdown
 
 interface Ethernet3/1
   switchport
@@ -1510,21 +1689,21 @@ interface Ethernet4/48
   switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
 fabricpath domain default</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-LE12" type="SIMPLE" subtype="NX-OSv" location="157,213" excludeFromLaunch="true">
+    <node name="PHX-CORE-LE12" type="SIMPLE" subtype="NX-OSv" location="158,258" excludeFromLaunch="true">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Tue Jul 28 16:54:19 2015
+!Time: Mon Jun  6 00:02:47 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 license grace-period
 
@@ -1815,147 +1994,195 @@ interface Ethernet2/48
 
 interface Ethernet3/1
   switchport
+  no shutdown
 
 interface Ethernet3/2
   switchport
+  no shutdown
 
 interface Ethernet3/3
   switchport
+  no shutdown
 
 interface Ethernet3/4
   switchport
+  no shutdown
 
 interface Ethernet3/5
   switchport
+  no shutdown
 
 interface Ethernet3/6
   switchport
+  no shutdown
 
 interface Ethernet3/7
   switchport
+  no shutdown
 
 interface Ethernet3/8
   switchport
+  no shutdown
 
 interface Ethernet3/9
   switchport
+  no shutdown
 
 interface Ethernet3/10
   switchport
+  no shutdown
 
 interface Ethernet3/11
   switchport
+  no shutdown
 
 interface Ethernet3/12
   switchport
+  no shutdown
 
 interface Ethernet3/13
   switchport
+  no shutdown
 
 interface Ethernet3/14
   switchport
+  no shutdown
 
 interface Ethernet3/15
   switchport
+  no shutdown
 
 interface Ethernet3/16
   switchport
+  no shutdown
 
 interface Ethernet3/17
   switchport
+  no shutdown
 
 interface Ethernet3/18
   switchport
+  no shutdown
 
 interface Ethernet3/19
   switchport
+  no shutdown
 
 interface Ethernet3/20
   switchport
+  no shutdown
 
 interface Ethernet3/21
   switchport
+  no shutdown
 
 interface Ethernet3/22
   switchport
+  no shutdown
 
 interface Ethernet3/23
   switchport
+  no shutdown
 
 interface Ethernet3/24
   switchport
+  no shutdown
 
 interface Ethernet3/25
   switchport
+  no shutdown
 
 interface Ethernet3/26
   switchport
+  no shutdown
 
 interface Ethernet3/27
   switchport
+  no shutdown
 
 interface Ethernet3/28
   switchport
+  no shutdown
 
 interface Ethernet3/29
   switchport
+  no shutdown
 
 interface Ethernet3/30
   switchport
+  no shutdown
 
 interface Ethernet3/31
   switchport
+  no shutdown
 
 interface Ethernet3/32
   switchport
+  no shutdown
 
 interface Ethernet3/33
   switchport
+  no shutdown
 
 interface Ethernet3/34
   switchport
+  no shutdown
 
 interface Ethernet3/35
   switchport
+  no shutdown
 
 interface Ethernet3/36
   switchport
+  no shutdown
 
 interface Ethernet3/37
   switchport
+  no shutdown
 
 interface Ethernet3/38
   switchport
+  no shutdown
 
 interface Ethernet3/39
   switchport
+  no shutdown
 
 interface Ethernet3/40
   switchport
+  no shutdown
 
 interface Ethernet3/41
   switchport
+  no shutdown
 
 interface Ethernet3/42
   switchport
+  no shutdown
 
 interface Ethernet3/43
   switchport
+  no shutdown
 
 interface Ethernet3/44
   switchport
+  no shutdown
 
 interface Ethernet3/45
   switchport
+  no shutdown
 
 interface Ethernet3/46
   switchport
+  no shutdown
 
 interface Ethernet3/47
   switchport
+  no shutdown
 
 interface Ethernet3/48
   switchport
+  no shutdown
 
 interface Ethernet4/1
   switchport
@@ -2102,21 +2329,21 @@ interface Ethernet4/48
   switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
 fabricpath domain default</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-LE21" type="SIMPLE" subtype="NX-OSv" location="439,208">
+    <node name="PHX-CORE-LE21" type="SIMPLE" subtype="NX-OSv" location="478,256">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Tue Jul 28 16:52:07 2015
+!Time: Mon Jun  6 00:02:47 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 license grace-period
 
@@ -2182,282 +2409,375 @@ interface Ethernet2/3
 
 interface Ethernet2/4
   switchport
+  no shutdown
 
 interface Ethernet2/5
   switchport
+  no shutdown
 
 interface Ethernet2/6
   switchport
+  no shutdown
 
 interface Ethernet2/7
   switchport
+  no shutdown
 
 interface Ethernet2/8
   switchport
+  no shutdown
 
 interface Ethernet2/9
   switchport
+  no shutdown
 
 interface Ethernet2/10
   switchport
+  no shutdown
 
 interface Ethernet2/11
   switchport
+  no shutdown
 
 interface Ethernet2/12
   switchport
+  no shutdown
 
 interface Ethernet2/13
   switchport
+  no shutdown
 
 interface Ethernet2/14
   switchport
+  no shutdown
 
 interface Ethernet2/15
   switchport
+  no shutdown
 
 interface Ethernet2/16
   switchport
+  no shutdown
 
 interface Ethernet2/17
   switchport
+  no shutdown
 
 interface Ethernet2/18
   switchport
+  no shutdown
 
 interface Ethernet2/19
   switchport
+  no shutdown
 
 interface Ethernet2/20
   switchport
+  no shutdown
 
 interface Ethernet2/21
   switchport
+  no shutdown
 
 interface Ethernet2/22
   switchport
+  no shutdown
 
 interface Ethernet2/23
   switchport
+  no shutdown
 
 interface Ethernet2/24
   switchport
+  no shutdown
 
 interface Ethernet2/25
   switchport
+  no shutdown
 
 interface Ethernet2/26
   switchport
+  no shutdown
 
 interface Ethernet2/27
   switchport
+  no shutdown
 
 interface Ethernet2/28
   switchport
+  no shutdown
 
 interface Ethernet2/29
   switchport
+  no shutdown
 
 interface Ethernet2/30
   switchport
+  no shutdown
 
 interface Ethernet2/31
   switchport
+  no shutdown
 
 interface Ethernet2/32
   switchport
+  no shutdown
 
 interface Ethernet2/33
   switchport
+  no shutdown
 
 interface Ethernet2/34
   switchport
+  no shutdown
 
 interface Ethernet2/35
   switchport
+  no shutdown
 
 interface Ethernet2/36
   switchport
+  no shutdown
 
 interface Ethernet2/37
   switchport
+  no shutdown
 
 interface Ethernet2/38
   switchport
+  no shutdown
 
 interface Ethernet2/39
   switchport
+  no shutdown
 
 interface Ethernet2/40
   switchport
+  no shutdown
 
 interface Ethernet2/41
   switchport
+  no shutdown
 
 interface Ethernet2/42
   switchport
+  no shutdown
 
 interface Ethernet2/43
   switchport
+  no shutdown
 
 interface Ethernet2/44
   switchport
+  no shutdown
 
 interface Ethernet2/45
   switchport
+  no shutdown
 
 interface Ethernet2/46
   switchport
+  no shutdown
 
 interface Ethernet2/47
   switchport
+  no shutdown
 
 interface Ethernet2/48
   switchport
+  no shutdown
 
 interface Ethernet3/1
   switchport
+  no shutdown
 
 interface Ethernet3/2
   switchport
+  no shutdown
 
 interface Ethernet3/3
   switchport
+  no shutdown
 
 interface Ethernet3/4
   switchport
+  no shutdown
 
 interface Ethernet3/5
   switchport
+  no shutdown
 
 interface Ethernet3/6
   switchport
+  no shutdown
 
 interface Ethernet3/7
   switchport
+  no shutdown
 
 interface Ethernet3/8
   switchport
+  no shutdown
 
 interface Ethernet3/9
   switchport
+  no shutdown
 
 interface Ethernet3/10
   switchport
+  no shutdown
 
 interface Ethernet3/11
   switchport
+  no shutdown
 
 interface Ethernet3/12
   switchport
+  no shutdown
 
 interface Ethernet3/13
   switchport
+  no shutdown
 
 interface Ethernet3/14
   switchport
+  no shutdown
 
 interface Ethernet3/15
   switchport
+  no shutdown
 
 interface Ethernet3/16
   switchport
+  no shutdown
 
 interface Ethernet3/17
   switchport
+  no shutdown
 
 interface Ethernet3/18
   switchport
+  no shutdown
 
 interface Ethernet3/19
   switchport
+  no shutdown
 
 interface Ethernet3/20
   switchport
+  no shutdown
 
 interface Ethernet3/21
   switchport
+  no shutdown
 
 interface Ethernet3/22
   switchport
+  no shutdown
 
 interface Ethernet3/23
   switchport
+  no shutdown
 
 interface Ethernet3/24
   switchport
+  no shutdown
 
 interface Ethernet3/25
   switchport
+  no shutdown
 
 interface Ethernet3/26
   switchport
+  no shutdown
 
 interface Ethernet3/27
   switchport
+  no shutdown
 
 interface Ethernet3/28
   switchport
+  no shutdown
 
 interface Ethernet3/29
   switchport
+  no shutdown
 
 interface Ethernet3/30
   switchport
+  no shutdown
 
 interface Ethernet3/31
   switchport
+  no shutdown
 
 interface Ethernet3/32
   switchport
+  no shutdown
 
 interface Ethernet3/33
   switchport
+  no shutdown
 
 interface Ethernet3/34
   switchport
+  no shutdown
 
 interface Ethernet3/35
   switchport
+  no shutdown
 
 interface Ethernet3/36
   switchport
+  no shutdown
 
 interface Ethernet3/37
   switchport
+  no shutdown
 
 interface Ethernet3/38
   switchport
+  no shutdown
 
 interface Ethernet3/39
   switchport
+  no shutdown
 
 interface Ethernet3/40
   switchport
+  no shutdown
 
 interface Ethernet3/41
   switchport
+  no shutdown
 
 interface Ethernet3/42
   switchport
+  no shutdown
 
 interface Ethernet3/43
   switchport
+  no shutdown
 
 interface Ethernet3/44
   switchport
+  no shutdown
 
 interface Ethernet3/45
   switchport
+  no shutdown
 
 interface Ethernet3/46
   switchport
+  no shutdown
 
 interface Ethernet3/47
   switchport
+  no shutdown
 
 interface Ethernet3/48
   switchport
+  no shutdown
 
 interface Ethernet4/1
   switchport
@@ -2604,21 +2924,21 @@ interface Ethernet4/48
   switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
 fabricpath domain default</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-LE22" type="SIMPLE" subtype="NX-OSv" location="548,217" excludeFromLaunch="true">
+    <node name="PHX-CORE-LE22" type="SIMPLE" subtype="NX-OSv" location="631,221" excludeFromLaunch="true">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Fri Jul 10 02:09:50 2015
+!Time: Mon Jun  6 00:02:47 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 
 vdc switch id 1
@@ -3186,14 +3506,14 @@ interface Ethernet4/48
   switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1</entry>
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="server-1" type="SIMPLE" subtype="server" location="110,321">
+    <node name="server-1" type="SIMPLE" subtype="server" location="46,397">
         <extensions>
             <entry key="AutoNetkit.server_username" type="String">cisco</entry>
             <entry key="config" type="String">#cloud-config
@@ -3263,9 +3583,9 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.6" netPrefixLenV4="30"/>
     </node>
-    <node name="server-2" type="SIMPLE" subtype="server" location="201,315" excludeFromLaunch="true">
+    <node name="server-2" type="SIMPLE" subtype="server" location="175,401" excludeFromLaunch="true">
         <extensions>
-            <entry key="config" type="string">#cloud-config
+            <entry key="config" type="String">#cloud-config
 bootcmd:
 - ln -s -t /etc/rc.d /etc/rc.local
 hostname: server-2
@@ -3324,7 +3644,7 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.26" netPrefixLenV4="30"/>
     </node>
-    <node name="server-3" type="SIMPLE" subtype="server" location="427,311">
+    <node name="server-3" type="SIMPLE" subtype="server" location="501,399">
         <extensions>
             <entry key="config" type="String">#cloud-config
 bootcmd:
@@ -3385,9 +3705,9 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.30" netPrefixLenV4="30"/>
     </node>
-    <node name="server-4" type="SIMPLE" subtype="server" location="519,317" excludeFromLaunch="true">
+    <node name="server-4" type="SIMPLE" subtype="server" location="650,404" excludeFromLaunch="true">
         <extensions>
-            <entry key="config" type="string">#cloud-config
+            <entry key="config" type="String">#cloud-config
 bootcmd:
 - ln -s -t /etc/rc.d /etc/rc.local
 hostname: server-4
@@ -3446,13 +3766,13 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.34" netPrefixLenV4="30"/>
     </node>
-    <node name="PHX-CORE-LE01" type="SIMPLE" subtype="NX-OSv" location="296,336" excludeFromLaunch="true">
+    <node name="PHX-CORE-LE01" type="SIMPLE" subtype="NX-OSv" location="317,298" excludeFromLaunch="true">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Tue Jul 28 16:54:37 2015
+!Time: Mon Jun  6 00:02:48 2016
 
-version 7.2(0)D1(1)
+version 7.3(0)D1(1)
 power redundancy-mode redundant
 license grace-period
 
@@ -3489,6 +3809,7 @@ rmon event 3 log description ERROR(3) owner PMON@ERROR
 rmon event 4 log description WARNING(4) owner PMON@WARNING
 rmon event 5 log description INFORMATION(5) owner PMON@INFO
 snmp-server enable traps link
+snmp-server enable traps link cisco-xcvr-mon-status-chg
 
 vlan 1,10,20,30,40
 vlan 10,20,30,40
@@ -3982,262 +4303,164 @@ interface Ethernet3/48
   mac-address 0000.0000.002f
 
 interface Ethernet4/1
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/2
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/3
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/4
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/5
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/6
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/7
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/8
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/9
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/10
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/11
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/12
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/13
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/14
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/15
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/16
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/17
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/18
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/19
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/20
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/21
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/22
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/23
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/24
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/25
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/26
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/27
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/28
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/29
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/30
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/31
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/32
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/33
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/34
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/35
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/36
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/37
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/38
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/39
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/40
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/41
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/42
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/43
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/44
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/45
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/46
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/47
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 
 interface Ethernet4/48
-  shutdown
-  no switchport
-  mac-address 0000.0000.002f
+  switchport
 line console
 line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.2.0.ZD.0.120.bin sup-1
-boot system bootflash:/titanium-d1.7.2.0.ZD.0.120.bin sup-1
-fabricpath domain default
-no system default switchport shutdown</entry>
+boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
+boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
+fabricpath domain default</entry>
         </extensions>
         <interface id="0" name="Ethernet2/1"/>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-RT01" type="SIMPLE" subtype="IOS XRv" location="298,437" excludeFromLaunch="true">
+    <node name="PHX-CORE-RT01" type="SIMPLE" subtype="IOS XRv" location="316,437" excludeFromLaunch="true">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
-            <entry key="config" type="String">!! IOS XR Configuration 5.3.0
-!! Last configuration change at Sat Jul 11 02:23:53 2015 by cisco
+            <entry key="config" type="String">!! IOS XR Configuration 6.0.1
+!! Last configuration change at Sun Jun  5 21:05:25 2016 by CVAC
 !
-
 interface Loopback0
  ipv4 address 172.16.8.8 255.255.255.0
 !
