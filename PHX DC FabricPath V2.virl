@@ -1697,7 +1697,7 @@ fabricpath domain default</entry>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-LE12" type="SIMPLE" subtype="NX-OSv" location="158,258" excludeFromLaunch="true">
+    <node name="PHX-CORE-LE12" type="SIMPLE" subtype="NX-OSv" location="158,258">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
@@ -2932,7 +2932,7 @@ fabricpath domain default</entry>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-LE22" type="SIMPLE" subtype="NX-OSv" location="631,221" excludeFromLaunch="true">
+    <node name="PHX-CORE-LE22" type="SIMPLE" subtype="NX-OSv" location="631,221">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
@@ -3583,7 +3583,7 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.6" netPrefixLenV4="30"/>
     </node>
-    <node name="server-2" type="SIMPLE" subtype="server" location="175,401" excludeFromLaunch="true">
+    <node name="server-2" type="SIMPLE" subtype="server" location="175,401">
         <extensions>
             <entry key="config" type="String">#cloud-config
 bootcmd:
@@ -3705,7 +3705,7 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.30" netPrefixLenV4="30"/>
     </node>
-    <node name="server-4" type="SIMPLE" subtype="server" location="650,404" excludeFromLaunch="true">
+    <node name="server-4" type="SIMPLE" subtype="server" location="650,404">
         <extensions>
             <entry key="config" type="String">#cloud-config
 bootcmd:
@@ -3766,7 +3766,7 @@ write_files:
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.34" netPrefixLenV4="30"/>
     </node>
-    <node name="PHX-CORE-LE01" type="SIMPLE" subtype="NX-OSv" location="317,298" excludeFromLaunch="true">
+    <node name="PHX-CORE-LE01" type="SIMPLE" subtype="NX-OSv" location="317,298">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
@@ -4455,7 +4455,7 @@ fabricpath domain default</entry>
         <interface id="1" name="Ethernet2/2"/>
         <interface id="2" name="Ethernet2/3"/>
     </node>
-    <node name="PHX-CORE-RT01" type="SIMPLE" subtype="IOS XRv" location="316,437" excludeFromLaunch="true">
+    <node name="PHX-CORE-RT01" type="SIMPLE" subtype="IOS XRv" location="316,437">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!! IOS XR Configuration 6.0.1
