@@ -3,621 +3,6 @@
     <extensions>
         <entry key="management_network" type="String">flat</entry>
     </extensions>
-    <node name="PHX-CORE-SP01" type="SIMPLE" subtype="NX-OSv" location="125,161">
-        <extensions>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
-            <entry key="config" type="String">!Command: show running-config
-!Time: Wed Jun  8 01:38:01 2016
-
-version 7.3(0)D1(1)
-power redundancy-mode redundant
-license grace-period
-
-hostname PHX-CORE-SP01
-vdc PHX-CORE-SP01 id 1
-  limit-resource module-type m1 m1xl m2xl f2e 
-  allocate interface Ethernet2/1-48
-  allocate interface Ethernet3/1-48
-  allocate interface Ethernet4/1-48
-  limit-resource vlan minimum 16 maximum 4094
-  limit-resource vrf minimum 2 maximum 4096
-  limit-resource port-channel minimum 0 maximum 768
-  limit-resource u4route-mem minimum 96 maximum 96
-  limit-resource u6route-mem minimum 24 maximum 24
-  limit-resource m4route-mem minimum 58 maximum 58
-  limit-resource m6route-mem minimum 8 maximum 8
-
-feature telnet
-feature pim
-feature eigrp
-feature otv
-feature interface-vlan
-
-username admin password 5 $5$2fWwO2vK$s7.Hr3YltMNHuhywQQ3nfOd.gAPHgs3SOBYYdGT3E.A  role network-admin
-no password strength-check
-ip domain-lookup
-vlan dot1Q tag native
-system default switchport
-system jumbomtu 0
-no logging event trunk-status enable
-copp profile strict
-snmp-server user admin auth md5 0x328945d53e05e8e7207f8c20b142f0b7 priv 0x328945d53e05e8e7207f8c20b142f0b7 localizedkey engineID 128:0:0:9:3:0:0:0
-rmon event 1 log description FATAL(1) owner PMON@FATAL
-rmon event 2 log description CRITICAL(2) owner PMON@CRITICAL
-rmon event 3 log description ERROR(3) owner PMON@ERROR
-rmon event 4 log description WARNING(4) owner PMON@WARNING
-rmon event 5 log description INFORMATION(5) owner PMON@INFO
-snmp-server enable traps link
-snmp-server enable traps link cisco-xcvr-mon-status-chg
-
-vlan 1,10,999
-vlan 10
-  name OVERLAY_VLAN
-vlan 999
-  name SITE_VLAN
-
-otv site-vlan 999
-vrf context management
-
-
-interface mgmt0
-  vrf member management
-  ip address 172.16.11.79/24
-
-interface Vlan1
-
-interface Overlay1
-  otv join-interface Ethernet2/3
-  otv control-group 225.6.7.8
-  otv data-group 232.1.2.0/24
-  otv extend-vlan 10
-  no shutdown
-
-interface Ethernet2/1
-  switchport
-  switchport mode trunk
-  spanning-tree port type network
-  no shutdown
-
-interface Ethernet2/2
-  switchport
-  switchport mode trunk
-  spanning-tree port type network
-  no shutdown
-
-interface Ethernet2/3
-  no switchport
-  ip address 95.105.1.2/24
-  ip router eigrp 1
-  ip igmp version 3
-  no shutdown
-
-interface Ethernet2/4
-  switchport
-  no shutdown
-
-interface Ethernet2/5
-  switchport
-  no shutdown
-
-interface Ethernet2/6
-  switchport
-  no shutdown
-
-interface Ethernet2/7
-  switchport
-  no shutdown
-
-interface Ethernet2/8
-  switchport
-  no shutdown
-
-interface Ethernet2/9
-  switchport
-  no shutdown
-
-interface Ethernet2/10
-  switchport
-  no shutdown
-
-interface Ethernet2/11
-  switchport
-  no shutdown
-
-interface Ethernet2/12
-  switchport
-  no shutdown
-
-interface Ethernet2/13
-  switchport
-  no shutdown
-
-interface Ethernet2/14
-  switchport
-  no shutdown
-
-interface Ethernet2/15
-  switchport
-  no shutdown
-
-interface Ethernet2/16
-  switchport
-  no shutdown
-
-interface Ethernet2/17
-  switchport
-  no shutdown
-
-interface Ethernet2/18
-  switchport
-  no shutdown
-
-interface Ethernet2/19
-  switchport
-  no shutdown
-
-interface Ethernet2/20
-  switchport
-  no shutdown
-
-interface Ethernet2/21
-  switchport
-  no shutdown
-
-interface Ethernet2/22
-  switchport
-  no shutdown
-
-interface Ethernet2/23
-  switchport
-  no shutdown
-
-interface Ethernet2/24
-  switchport
-  no shutdown
-
-interface Ethernet2/25
-  switchport
-  no shutdown
-
-interface Ethernet2/26
-  switchport
-  no shutdown
-
-interface Ethernet2/27
-  switchport
-  no shutdown
-
-interface Ethernet2/28
-  switchport
-  no shutdown
-
-interface Ethernet2/29
-  switchport
-  no shutdown
-
-interface Ethernet2/30
-  switchport
-  no shutdown
-
-interface Ethernet2/31
-  switchport
-  no shutdown
-
-interface Ethernet2/32
-  switchport
-  no shutdown
-
-interface Ethernet2/33
-  switchport
-  no shutdown
-
-interface Ethernet2/34
-  switchport
-  no shutdown
-
-interface Ethernet2/35
-  switchport
-  no shutdown
-
-interface Ethernet2/36
-  switchport
-  no shutdown
-
-interface Ethernet2/37
-  switchport
-  no shutdown
-
-interface Ethernet2/38
-  switchport
-  no shutdown
-
-interface Ethernet2/39
-  switchport
-  no shutdown
-
-interface Ethernet2/40
-  switchport
-  no shutdown
-
-interface Ethernet2/41
-  switchport
-  no shutdown
-
-interface Ethernet2/42
-  switchport
-  no shutdown
-
-interface Ethernet2/43
-  switchport
-  no shutdown
-
-interface Ethernet2/44
-  switchport
-  no shutdown
-
-interface Ethernet2/45
-  switchport
-  no shutdown
-
-interface Ethernet2/46
-  switchport
-  no shutdown
-
-interface Ethernet2/47
-  switchport
-  no shutdown
-
-interface Ethernet2/48
-  switchport
-  no shutdown
-
-interface Ethernet3/1
-  switchport
-  no shutdown
-
-interface Ethernet3/2
-  switchport
-  no shutdown
-
-interface Ethernet3/3
-  switchport
-  no shutdown
-
-interface Ethernet3/4
-  switchport
-  no shutdown
-
-interface Ethernet3/5
-  switchport
-  no shutdown
-
-interface Ethernet3/6
-  switchport
-  no shutdown
-
-interface Ethernet3/7
-  switchport
-  no shutdown
-
-interface Ethernet3/8
-  switchport
-  no shutdown
-
-interface Ethernet3/9
-  switchport
-  no shutdown
-
-interface Ethernet3/10
-  switchport
-  no shutdown
-
-interface Ethernet3/11
-  switchport
-  no shutdown
-
-interface Ethernet3/12
-  switchport
-  no shutdown
-
-interface Ethernet3/13
-  switchport
-  no shutdown
-
-interface Ethernet3/14
-  switchport
-  no shutdown
-
-interface Ethernet3/15
-  switchport
-  no shutdown
-
-interface Ethernet3/16
-  switchport
-  no shutdown
-
-interface Ethernet3/17
-  switchport
-  no shutdown
-
-interface Ethernet3/18
-  switchport
-  no shutdown
-
-interface Ethernet3/19
-  switchport
-  no shutdown
-
-interface Ethernet3/20
-  switchport
-  no shutdown
-
-interface Ethernet3/21
-  switchport
-  no shutdown
-
-interface Ethernet3/22
-  switchport
-  no shutdown
-
-interface Ethernet3/23
-  switchport
-  no shutdown
-
-interface Ethernet3/24
-  switchport
-  no shutdown
-
-interface Ethernet3/25
-  switchport
-  no shutdown
-
-interface Ethernet3/26
-  switchport
-  no shutdown
-
-interface Ethernet3/27
-  switchport
-  no shutdown
-
-interface Ethernet3/28
-  switchport
-  no shutdown
-
-interface Ethernet3/29
-  switchport
-  no shutdown
-
-interface Ethernet3/30
-  switchport
-  no shutdown
-
-interface Ethernet3/31
-  switchport
-  no shutdown
-
-interface Ethernet3/32
-  switchport
-  no shutdown
-
-interface Ethernet3/33
-  switchport
-  no shutdown
-
-interface Ethernet3/34
-  switchport
-  no shutdown
-
-interface Ethernet3/35
-  switchport
-  no shutdown
-
-interface Ethernet3/36
-  switchport
-  no shutdown
-
-interface Ethernet3/37
-  switchport
-  no shutdown
-
-interface Ethernet3/38
-  switchport
-  no shutdown
-
-interface Ethernet3/39
-  switchport
-  no shutdown
-
-interface Ethernet3/40
-  switchport
-  no shutdown
-
-interface Ethernet3/41
-  switchport
-  no shutdown
-
-interface Ethernet3/42
-  switchport
-  no shutdown
-
-interface Ethernet3/43
-  switchport
-  no shutdown
-
-interface Ethernet3/44
-  switchport
-  no shutdown
-
-interface Ethernet3/45
-  switchport
-  no shutdown
-
-interface Ethernet3/46
-  switchport
-  no shutdown
-
-interface Ethernet3/47
-  switchport
-  no shutdown
-
-interface Ethernet3/48
-  switchport
-  no shutdown
-
-interface Ethernet4/1
-  switchport
-
-interface Ethernet4/2
-  switchport
-
-interface Ethernet4/3
-  switchport
-
-interface Ethernet4/4
-  switchport
-
-interface Ethernet4/5
-  switchport
-
-interface Ethernet4/6
-  switchport
-
-interface Ethernet4/7
-  switchport
-
-interface Ethernet4/8
-  switchport
-
-interface Ethernet4/9
-  switchport
-
-interface Ethernet4/10
-  switchport
-
-interface Ethernet4/11
-  switchport
-
-interface Ethernet4/12
-  switchport
-
-interface Ethernet4/13
-  switchport
-
-interface Ethernet4/14
-  switchport
-
-interface Ethernet4/15
-  switchport
-
-interface Ethernet4/16
-  switchport
-
-interface Ethernet4/17
-  switchport
-
-interface Ethernet4/18
-  switchport
-
-interface Ethernet4/19
-  switchport
-
-interface Ethernet4/20
-  switchport
-
-interface Ethernet4/21
-  switchport
-
-interface Ethernet4/22
-  switchport
-
-interface Ethernet4/23
-  switchport
-
-interface Ethernet4/24
-  switchport
-
-interface Ethernet4/25
-  switchport
-
-interface Ethernet4/26
-  switchport
-
-interface Ethernet4/27
-  switchport
-
-interface Ethernet4/28
-  switchport
-
-interface Ethernet4/29
-  switchport
-
-interface Ethernet4/30
-  switchport
-
-interface Ethernet4/31
-  switchport
-
-interface Ethernet4/32
-  switchport
-
-interface Ethernet4/33
-  switchport
-
-interface Ethernet4/34
-  switchport
-
-interface Ethernet4/35
-  switchport
-
-interface Ethernet4/36
-  switchport
-
-interface Ethernet4/37
-  switchport
-
-interface Ethernet4/38
-  switchport
-
-interface Ethernet4/39
-  switchport
-
-interface Ethernet4/40
-  switchport
-
-interface Ethernet4/41
-  switchport
-
-interface Ethernet4/42
-  switchport
-
-interface Ethernet4/43
-  switchport
-
-interface Ethernet4/44
-  switchport
-
-interface Ethernet4/45
-  switchport
-
-interface Ethernet4/46
-  switchport
-
-interface Ethernet4/47
-  switchport
-
-interface Ethernet4/48
-  switchport
-line console
-line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
-boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
-router eigrp 1
-otv site-identifier 0000.0000.0704</entry>
-        </extensions>
-        <interface id="0" name="Ethernet2/1"/>
-        <interface id="1" name="Ethernet2/2"/>
-        <interface id="2" name="Ethernet2/3"/>
-    </node>
     <node name="ISP-RT1" type="SIMPLE" subtype="IOSv" location="481,82">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -766,7 +151,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Wed Jun  8 01:38:01 2016
+!Time: Wed Jun  8 01:30:27 2016
 
 version 7.3(0)D1(1)
 power redundancy-mode redundant
@@ -1312,7 +697,7 @@ boot system bootflash:/titanium-d1.7.3.0.D1.1.bin</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Wed Jun  8 01:38:01 2016
+!Time: Wed Jun  8 01:30:28 2016
 
 version 7.3(0)D1(1)
 power redundancy-mode redundant
@@ -1877,579 +1262,11 @@ boot system bootflash:/titanium-d1.7.3.0.D1.1.bin</entry>
         <interface id="0" name="Ethernet2/1"/>
         <interface id="1" name="Ethernet2/2"/>
     </node>
-    <node name="NWJ-CORE-SP01" type="SIMPLE" subtype="NX-OSv" location="781,163">
-        <extensions>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
-            <entry key="config" type="String">!Command: show running-config
-!Time: Wed Jun  8 01:38:01 2016
-
-version 7.3(0)D1(1)
-power redundancy-mode redundant
-license grace-period
-
-hostname NWJ-CORE-SP01
-vdc NWJ-CORE-SP01 id 1
-  limit-resource module-type m1 m1xl m2xl f2e 
-  allocate interface Ethernet2/1-48
-  allocate interface Ethernet3/1-48
-  allocate interface Ethernet4/1-48
-  limit-resource vlan minimum 16 maximum 4094
-  limit-resource vrf minimum 2 maximum 4096
-  limit-resource port-channel minimum 0 maximum 768
-  limit-resource u4route-mem minimum 96 maximum 96
-  limit-resource u6route-mem minimum 24 maximum 24
-  limit-resource m4route-mem minimum 58 maximum 58
-  limit-resource m6route-mem minimum 8 maximum 8
-
-feature telnet
-feature pim
-feature eigrp
-feature otv
-feature interface-vlan
-
-username admin password 5 $5$2fWwO2vK$s7.Hr3YltMNHuhywQQ3nfOd.gAPHgs3SOBYYdGT3E.A  role network-admin
-no password strength-check
-ip domain-lookup
-vlan dot1Q tag native
-system default switchport
-system jumbomtu 0
-no logging event trunk-status enable
-copp profile strict
-snmp-server user admin auth md5 0x328945d53e05e8e7207f8c20b142f0b7 priv 0x328945d53e05e8e7207f8c20b142f0b7 localizedkey engineID 128:0:0:9:3:0:0:0
-rmon event 1 log description FATAL(1) owner PMON@FATAL
-rmon event 2 log description CRITICAL(2) owner PMON@CRITICAL
-rmon event 3 log description ERROR(3) owner PMON@ERROR
-rmon event 4 log description WARNING(4) owner PMON@WARNING
-rmon event 5 log description INFORMATION(5) owner PMON@INFO
-snmp-server enable traps link
-snmp-server enable traps link cisco-xcvr-mon-status-chg
-
-vlan 1,10,999
-vlan 10
-  name OVERLAY_VLAN
-vlan 999
-  name SITE_VLAN
-
-otv site-vlan 999
-vrf context management
-
-
-interface mgmt0
-  vrf member management
-  ip address 172.16.11.74/24
-
-interface Vlan1
-
-interface Overlay1
-  otv join-interface Ethernet2/3
-  otv control-group 225.6.7.8
-  otv data-group 232.1.2.0/24
-  otv extend-vlan 10
-  no shutdown
-
-interface Ethernet2/1
-  switchport
-  switchport mode trunk
-  spanning-tree port type network
-  no shutdown
-
-interface Ethernet2/2
-  switchport
-  switchport mode trunk
-  spanning-tree port type network
-  no shutdown
-
-interface Ethernet2/3
-  no switchport
-  mac-address 0000.0000.002f
-  ip address 96.106.1.2/24
-  ip router eigrp 1
-  ip igmp version 3
-  no shutdown
-
-interface Ethernet2/4
-  switchport
-  no shutdown
-
-interface Ethernet2/5
-  switchport
-  no shutdown
-
-interface Ethernet2/6
-  switchport
-  no shutdown
-
-interface Ethernet2/7
-  switchport
-  no shutdown
-
-interface Ethernet2/8
-  switchport
-  no shutdown
-
-interface Ethernet2/9
-  switchport
-  no shutdown
-
-interface Ethernet2/10
-  switchport
-  no shutdown
-
-interface Ethernet2/11
-  switchport
-  no shutdown
-
-interface Ethernet2/12
-  switchport
-  no shutdown
-
-interface Ethernet2/13
-  switchport
-  no shutdown
-
-interface Ethernet2/14
-  switchport
-  no shutdown
-
-interface Ethernet2/15
-  switchport
-  no shutdown
-
-interface Ethernet2/16
-  switchport
-  no shutdown
-
-interface Ethernet2/17
-  switchport
-  no shutdown
-
-interface Ethernet2/18
-  switchport
-  no shutdown
-
-interface Ethernet2/19
-  switchport
-  no shutdown
-
-interface Ethernet2/20
-  switchport
-  no shutdown
-
-interface Ethernet2/21
-  switchport
-  no shutdown
-
-interface Ethernet2/22
-  switchport
-  no shutdown
-
-interface Ethernet2/23
-  switchport
-  no shutdown
-
-interface Ethernet2/24
-  switchport
-  no shutdown
-
-interface Ethernet2/25
-  switchport
-  no shutdown
-
-interface Ethernet2/26
-  switchport
-  no shutdown
-
-interface Ethernet2/27
-  switchport
-  no shutdown
-
-interface Ethernet2/28
-  switchport
-  no shutdown
-
-interface Ethernet2/29
-  switchport
-  no shutdown
-
-interface Ethernet2/30
-  switchport
-  no shutdown
-
-interface Ethernet2/31
-  switchport
-  no shutdown
-
-interface Ethernet2/32
-  switchport
-  no shutdown
-
-interface Ethernet2/33
-  switchport
-  no shutdown
-
-interface Ethernet2/34
-  switchport
-  no shutdown
-
-interface Ethernet2/35
-  switchport
-  no shutdown
-
-interface Ethernet2/36
-  switchport
-  no shutdown
-
-interface Ethernet2/37
-  switchport
-  no shutdown
-
-interface Ethernet2/38
-  switchport
-  no shutdown
-
-interface Ethernet2/39
-  switchport
-  no shutdown
-
-interface Ethernet2/40
-  switchport
-  no shutdown
-
-interface Ethernet2/41
-  switchport
-  no shutdown
-
-interface Ethernet2/42
-  switchport
-  no shutdown
-
-interface Ethernet2/43
-  switchport
-  no shutdown
-
-interface Ethernet2/44
-  switchport
-  no shutdown
-
-interface Ethernet2/45
-  switchport
-  no shutdown
-
-interface Ethernet2/46
-  switchport
-  no shutdown
-
-interface Ethernet2/47
-  switchport
-  no shutdown
-
-interface Ethernet2/48
-  switchport
-  no shutdown
-
-interface Ethernet3/1
-  switchport
-
-interface Ethernet3/2
-  switchport
-
-interface Ethernet3/3
-  switchport
-
-interface Ethernet3/4
-  switchport
-
-interface Ethernet3/5
-  switchport
-
-interface Ethernet3/6
-  switchport
-
-interface Ethernet3/7
-  switchport
-
-interface Ethernet3/8
-  switchport
-
-interface Ethernet3/9
-  switchport
-
-interface Ethernet3/10
-  switchport
-
-interface Ethernet3/11
-  switchport
-
-interface Ethernet3/12
-  switchport
-
-interface Ethernet3/13
-  switchport
-
-interface Ethernet3/14
-  switchport
-
-interface Ethernet3/15
-  switchport
-
-interface Ethernet3/16
-  switchport
-
-interface Ethernet3/17
-  switchport
-
-interface Ethernet3/18
-  switchport
-
-interface Ethernet3/19
-  switchport
-
-interface Ethernet3/20
-  switchport
-
-interface Ethernet3/21
-  switchport
-
-interface Ethernet3/22
-  switchport
-
-interface Ethernet3/23
-  switchport
-
-interface Ethernet3/24
-  switchport
-
-interface Ethernet3/25
-  switchport
-
-interface Ethernet3/26
-  switchport
-
-interface Ethernet3/27
-  switchport
-
-interface Ethernet3/28
-  switchport
-
-interface Ethernet3/29
-  switchport
-
-interface Ethernet3/30
-  switchport
-
-interface Ethernet3/31
-  switchport
-
-interface Ethernet3/32
-  switchport
-
-interface Ethernet3/33
-  switchport
-
-interface Ethernet3/34
-  switchport
-
-interface Ethernet3/35
-  switchport
-
-interface Ethernet3/36
-  switchport
-
-interface Ethernet3/37
-  switchport
-
-interface Ethernet3/38
-  switchport
-
-interface Ethernet3/39
-  switchport
-
-interface Ethernet3/40
-  switchport
-
-interface Ethernet3/41
-  switchport
-
-interface Ethernet3/42
-  switchport
-
-interface Ethernet3/43
-  switchport
-
-interface Ethernet3/44
-  switchport
-
-interface Ethernet3/45
-  switchport
-
-interface Ethernet3/46
-  switchport
-
-interface Ethernet3/47
-  switchport
-
-interface Ethernet3/48
-  switchport
-
-interface Ethernet4/1
-  switchport
-
-interface Ethernet4/2
-  switchport
-
-interface Ethernet4/3
-  switchport
-
-interface Ethernet4/4
-  switchport
-
-interface Ethernet4/5
-  switchport
-
-interface Ethernet4/6
-  switchport
-
-interface Ethernet4/7
-  switchport
-
-interface Ethernet4/8
-  switchport
-
-interface Ethernet4/9
-  switchport
-
-interface Ethernet4/10
-  switchport
-
-interface Ethernet4/11
-  switchport
-
-interface Ethernet4/12
-  switchport
-
-interface Ethernet4/13
-  switchport
-
-interface Ethernet4/14
-  switchport
-
-interface Ethernet4/15
-  switchport
-
-interface Ethernet4/16
-  switchport
-
-interface Ethernet4/17
-  switchport
-
-interface Ethernet4/18
-  switchport
-
-interface Ethernet4/19
-  switchport
-
-interface Ethernet4/20
-  switchport
-
-interface Ethernet4/21
-  switchport
-
-interface Ethernet4/22
-  switchport
-
-interface Ethernet4/23
-  switchport
-
-interface Ethernet4/24
-  switchport
-
-interface Ethernet4/25
-  switchport
-
-interface Ethernet4/26
-  switchport
-
-interface Ethernet4/27
-  switchport
-
-interface Ethernet4/28
-  switchport
-
-interface Ethernet4/29
-  switchport
-
-interface Ethernet4/30
-  switchport
-
-interface Ethernet4/31
-  switchport
-
-interface Ethernet4/32
-  switchport
-
-interface Ethernet4/33
-  switchport
-
-interface Ethernet4/34
-  switchport
-
-interface Ethernet4/35
-  switchport
-
-interface Ethernet4/36
-  switchport
-
-interface Ethernet4/37
-  switchport
-
-interface Ethernet4/38
-  switchport
-
-interface Ethernet4/39
-  switchport
-
-interface Ethernet4/40
-  switchport
-
-interface Ethernet4/41
-  switchport
-
-interface Ethernet4/42
-  switchport
-
-interface Ethernet4/43
-  switchport
-
-interface Ethernet4/44
-  switchport
-
-interface Ethernet4/45
-  switchport
-
-interface Ethernet4/46
-  switchport
-
-interface Ethernet4/47
-  switchport
-
-interface Ethernet4/48
-  switchport
-line console
-line vty
-boot kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin
-boot system bootflash:/titanium-d1.7.3.0.D1.1.bin 
-router eigrp 1
-otv site-identifier 0000.0000.0063</entry>
-        </extensions>
-        <interface id="0" name="Ethernet2/1"/>
-        <interface id="1" name="Ethernet2/2"/>
-        <interface id="2" name="Ethernet2/3"/>
-    </node>
     <node name="NWJ-CORE-LE11" type="SIMPLE" subtype="NX-OSv" location="689,319">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Wed Jun  8 01:38:01 2016
+!Time: Wed Jun  8 01:30:27 2016
 
 version 7.3(0)D1(1)
 power redundancy-mode redundant
@@ -2993,7 +1810,7 @@ boot system bootflash:/titanium-d1.7.3.0.D1.1.bin</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!Command: show running-config
-!Time: Wed Jun  8 01:38:01 2016
+!Time: Wed Jun  8 01:30:28 2016
 
 version 7.3(0)D1(1)
 power redundancy-mode redundant
@@ -3536,13 +2353,129 @@ boot system bootflash:/titanium-d1.7.3.0.D1.1.bin</entry>
         <interface id="1" name="Ethernet2/2"/>
     </node>
     <node name="server-1" type="SIMPLE" subtype="server" location="54,466">
-        <interface id="0" name="eth1"/>
+        <extensions>
+            <entry key="config" type="String">#cloud-config
+bootcmd:
+- ln -s -t /etc/rc.d /etc/rc.local
+hostname: server-1
+manage_etc_hosts: true
+runcmd:
+- start ttyS0
+- systemctl start getty@ttyS0.service
+- systemctl start rc-local
+- sed -i '/^\s*PasswordAuthentication\s\+no/d' /etc/ssh/sshd_config
+- echo "UseDNS no" &gt;&gt; /etc/ssh/sshd_config
+- service ssh restart
+- service sshd restart
+users:
+- default
+- gecos: User configured by VIRL Configuration Engine 0.21.7
+  lock-passwd: false
+  name: cisco
+  plain-text-passwd: cisco
+  shell: /bin/bash
+  ssh-authorized-keys:
+  - VIRL-USER-SSH-PUBLIC-KEY
+  sudo: ALL=(ALL) ALL
+write_files:
+- path: /etc/init/ttyS0.conf
+  owner: root:root
+  content: |
+    # ttyS0 - getty
+    # This service maintains a getty on ttyS0 from the point the system is
+    # started until it is shut down again.
+    start on stopped rc or RUNLEVEL=[12345]
+    stop on runlevel [!12345]
+    respawn
+    exec /sbin/getty -L 115200 ttyS0 vt102
+  permissions: '0644'
+- path: /etc/systemd/system/dhclient@.service
+  content: |
+    [Unit]
+    Description=Run dhclient on %i interface
+    After=network.target
+    [Service]
+    Type=oneshot
+    ExecStart=/sbin/dhclient %i -pf /var/run/dhclient.%i.pid -lf /var/lib/dhclient/dhclient.%i.lease
+    RemainAfterExit=yes
+  owner: root:root
+  permissions: '0644'
+- path: /etc/rc.local
+  owner: root:root
+  permissions: '0755'
+  content: |-
+    #!/bin/sh
+    ifconfig eth1 up 10.0.0.30 netmask 255.255.255.0
+    route add -net 10.0.0.0/8 gw 10.0.0.29 dev eth1
+    route add -net 192.168.0.0/28 gw 10.0.0.29 dev eth1
+    exit 0
+</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="eth1" ipv4="10.0.0.30" netPrefixLenV4="30"/>
     </node>
     <node name="server-3" type="SIMPLE" subtype="server" location="715,474">
         <extensions>
             <entry key="AutoNetkit.LDP" type="Boolean">true</entry>
+            <entry key="config" type="string">#cloud-config
+bootcmd:
+- ln -s -t /etc/rc.d /etc/rc.local
+hostname: server-3
+manage_etc_hosts: true
+runcmd:
+- start ttyS0
+- systemctl start getty@ttyS0.service
+- systemctl start rc-local
+- sed -i '/^\s*PasswordAuthentication\s\+no/d' /etc/ssh/sshd_config
+- echo "UseDNS no" &gt;&gt; /etc/ssh/sshd_config
+- service ssh restart
+- service sshd restart
+users:
+- default
+- gecos: User configured by VIRL Configuration Engine 0.21.7
+  lock-passwd: false
+  name: cisco
+  plain-text-passwd: cisco
+  shell: /bin/bash
+  ssh-authorized-keys:
+  - VIRL-USER-SSH-PUBLIC-KEY
+  sudo: ALL=(ALL) ALL
+write_files:
+- path: /etc/init/ttyS0.conf
+  owner: root:root
+  content: |
+    # ttyS0 - getty
+    # This service maintains a getty on ttyS0 from the point the system is
+    # started until it is shut down again.
+    start on stopped rc or RUNLEVEL=[12345]
+    stop on runlevel [!12345]
+    respawn
+    exec /sbin/getty -L 115200 ttyS0 vt102
+  permissions: '0644'
+- path: /etc/systemd/system/dhclient@.service
+  content: |
+    [Unit]
+    Description=Run dhclient on %i interface
+    After=network.target
+    [Service]
+    Type=oneshot
+    ExecStart=/sbin/dhclient %i -pf /var/run/dhclient.%i.pid -lf /var/lib/dhclient/dhclient.%i.lease
+    RemainAfterExit=yes
+  owner: root:root
+  permissions: '0644'
+- path: /etc/rc.local
+  owner: root:root
+  permissions: '0755'
+  content: |-
+    #!/bin/sh
+    ifconfig eth1 up 10.0.0.54 netmask 255.255.255.252
+    route add -net 10.0.0.0/8 gw 10.0.0.53 dev eth1
+    route add -net 192.168.0.0/28 gw 10.0.0.53 dev eth1
+    exit 0
+</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
-        <interface id="0" name="eth1"/>
+        <interface id="0" name="eth1" ipv4="10.0.0.54" netPrefixLenV4="30"/>
     </node>
     <node name="PHX-CORE-RT1" type="SIMPLE" subtype="IOSv" location="228,464">
         <extensions>
@@ -3800,182 +2733,92 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
     </node>
-    <node name="ISP-RT2" type="SIMPLE" subtype="CSR1000v" location="327,155">
+    <node name="ISP-RT2" type="SIMPLE" subtype="CSR1000v" location="327,155" ipv4="192.168.0.7">
         <extensions>
-            <entry key="config" type="String">!
-! Last configuration change at 01:38:05 UTC Wed Jun 8 2016
-!
-version 15.6
-service config
-service timestamps debug datetime msec
-service timestamps log datetime msec
-no platform punt-keepalive disable-kernel-core
-platform console serial
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">! IOS Config generated on 2016-06-07 21:35
+! by autonetkit_0.21.4
 !
 hostname ISP-RT2
-!
 boot-start-marker
 boot-end-marker
 !
+vrf definition Mgmt-intf
 !
-enable secret 5 $1$WhjF$lEuyAv4odGfaLc.nR52WJ/
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+!
+!
+license accept end user agreement
+license boot level premium
+!
 !
 no aaa new-model
 !
-ip multicast-routing distributed
+!
+ipv6 unicast-routing
 !
 !
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+no service config
+enable password cisco
+enable secret 4 tnhtc92DXBhelxjYk8LWJrPV36S2i4ntXrpb4RFmfqY
+ip classless
+ip subnet-zero
+no ip domain lookup
+ip domain name virl.info
+crypto key generate rsa modulus 768
+ip ssh server algorithm authentication password
+username cisco privilege 15 secret cisco
+line vty 0 4
+ transport input ssh telnet
+ exec-timeout 720 0
+ password cisco
+ login local
+line con 0
+ password cisco
 !
-!
-!
-!
-!
-!
-
-
-
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-subscriber templating
-!
-!
-!
-multilink bundle-name authenticated
-!
-!
-!
-!
-!
-crypto pki trustpoint TP-self-signed-1489278603
- enrollment selfsigned
- subject-name cn=IOS-Self-Signed-Certificate-1489278603
- revocation-check none
- rsakeypair TP-self-signed-1489278603
-!
-!
-crypto pki certificate chain TP-self-signed-1489278603
- certificate self-signed 01 nvram:IOS-Self-Sig#1.cer
-!
-!
-!
-!
-!
-!
-!
-license udi pid CSR1000V sn 983HUM51HY8
-!
-spanning-tree extend system-id
-!
-username cisco privilege 15 secret 5 $1$IgkW$dcaYxknBdxPWgcHSAPESB.
-!
-redundancy
-!
-!
-!
-!
-!
-cdp run
-!
-! 
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-! 
-! 
-! 
-! 
-! 
-! 
-!
-!
-interface Loopback0
- ip address 1.1.1.1 255.255.255.0
- ip pim sparse-mode
 !
 interface GigabitEthernet1
- ip address 172.16.11.77 255.255.255.0
- negotiation auto
+  description OOB Management
+  vrf forwarding Mgmt-intf
+  ! Configured on launch
+  no ip address
+  no shutdown
 !
 interface GigabitEthernet2
- ip address 95.105.1.1 255.255.255.0
- ip pim sparse-mode
- negotiation auto
+  description to PHX-CORE-SP01
+  ip address 95.105.1.1
+  no shutdown
 !
 interface GigabitEthernet3
- ip address 94.104.23.2 255.255.255.0
- ip pim sparse-mode
- negotiation auto
+  description to ISP-RT3
+  ip address 94.104.23.2 255.255.255.0
+  no shutdown
 !
 interface GigabitEthernet4
- ip address 94.104.12.2 255.255.255.0
- ip pim sparse-mode
- negotiation auto
-!
-!
-router eigrp 1
- network 1.1.1.0 0.0.0.255
- network 94.104.0.0 0.0.255.255
- network 95.105.0.0 0.0.255.255
-!
-!
-virtual-service csr_mgmt
-!
-ip forward-protocol nd
-ip pim rp-address 1.1.1.1
-!
-no ip http server
-no ip http secure-server
-ip tftp source-interface GigabitEthernet1
+  description to ISP-RT1
+  ip address 94.104.12.2 255.255.255.0
+  ip ospf cost 1
+  no shutdown
 !
 !
 !
 !
 !
-control-plane
-!
- !
- !
- !
- !
-!
-!
-!
-!
-!
-line con 0
- stopbits 1
-line vty 0
- login
-line vty 1
- login
- length 0
-line vty 2 4
- login
-!
-ntp server devicehelper.cisco.com
-!
-end</entry>
+end
+</entry>
         </extensions>
-        <interface id="0" name="GigabitEthernet2"/>
-        <interface id="1" name="GigabitEthernet3"/>
-        <interface id="2" name="GigabitEthernet4"/>
+        <interface id="0" name="GigabitEthernet2" ipv4="10.0.0.5" netPrefixLenV4="30"/>
+        <interface id="1" name="GigabitEthernet3" ipv4="10.0.0.21" netPrefixLenV4="30"/>
+        <interface id="2" name="GigabitEthernet4" ipv4="10.0.0.10" netPrefixLenV4="30"/>
     </node>
     <node name="ISP-RT3" type="SIMPLE" subtype="CSR1000v" location="626,154">
         <extensions>
@@ -4128,22 +2971,33 @@ line vty 2 4
 ntp server devicehelper.cisco.com
 !
 end</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet2"/>
         <interface id="1" name="GigabitEthernet3"/>
         <interface id="2" name="GigabitEthernet4"/>
     </node>
-    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
-    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
-    <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[1]"/>
-    <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[2]"/>
+    <node name="PHX-CORE-SP1" type="SIMPLE" subtype="NX-OSv 9000" location="134,132">
+        <interface id="0" name="Ethernet1/1"/>
+        <interface id="1" name="Ethernet1/2"/>
+        <interface id="2" name="Ethernet1/3"/>
+    </node>
+    <node name="NWJ-CORE-SP1" type="SIMPLE" subtype="NX-OSv 9000" location="833,113">
+        <interface id="0" name="Ethernet1/1"/>
+        <interface id="1" name="Ethernet1/2"/>
+        <interface id="2" name="Ethernet1/3"/>
+    </node>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[2]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[2]"/>
     <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[2]"/>
-    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[2]"/>
-    <connection dst="/virl:topology/virl:node[10]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[2]"/>
-    <connection dst="/virl:topology/virl:node[11]/virl:interface[1]" src="/virl:topology/virl:node[7]/virl:interface[2]"/>
-    <connection dst="/virl:topology/virl:node[12]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[3]"/>
-    <connection dst="/virl:topology/virl:node[12]/virl:interface[3]" src="/virl:topology/virl:node[2]/virl:interface[1]"/>
-    <connection dst="/virl:topology/virl:node[13]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[3]"/>
-    <connection dst="/virl:topology/virl:node[12]/virl:interface[2]" src="/virl:topology/virl:node[13]/virl:interface[2]"/>
-    <connection dst="/virl:topology/virl:node[13]/virl:interface[3]" src="/virl:topology/virl:node[2]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[3]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[2]" src="/virl:topology/virl:node[11]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[3]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[1]" src="/virl:topology/virl:node[13]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[13]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[1]" src="/virl:topology/virl:node[13]/virl:interface[3]"/>
 </topology>
