@@ -3979,6 +3979,7 @@ interface GigabitEthernet1
 interface GigabitEthernet2
   description to PHX-CORE-SP01
   ip address 95.105.1.1
+ip igmp version 3
   no shutdown
 !
 interface GigabitEthernet3
@@ -4005,6 +4006,7 @@ end
     </node>
     <node name="ISP-RT3" type="SIMPLE" subtype="CSR1000v" location="626,154">
         <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
 ! Last configuration change at 20:52:33 UTC Tue Jun 7 2016
 !
@@ -4102,6 +4104,7 @@ interface GigabitEthernet1
 !
 interface GigabitEthernet2
  ip address 96.106.1.1 255.255.255.0
+ip igmp ver 3
  negotiation auto
 !
 interface GigabitEthernet3
@@ -4154,7 +4157,6 @@ line vty 2 4
 ntp server devicehelper.cisco.com
 !
 end</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet2"/>
         <interface id="1" name="GigabitEthernet3"/>
