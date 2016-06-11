@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.9" simulationEngine="OPENSTACK" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.9/virl.xsd">
+    <extensions>
+        <entry key="management_network" type="String">user</entry>
+    </extensions>
+    <node name="R1" type="SIMPLE" subtype="IOSv" location="111,181">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">ho R1
+Ip multicast-routing
+
+interface Loopback0
+ ip address 172.16.1.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.77.12.1 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ router-id 172.16.1.1
+ network 10.77.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+    </node>
+    <node name="R2" type="SIMPLE" subtype="IOSv" location="318,181">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String"> ho R2
+ Ip multicast-routing
+interface Loopback0
+ ip address 172.16.2.2 255.255.255.255
+ ip pim sparse-mode
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown 
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.77.12.2 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 10.77.23.2 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.77.25.2 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ router-id 172.16.2.2
+ network 10.77.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip pim rp-address 172.16.2.2
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="R3" type="SIMPLE" subtype="IOSv" location="591,180">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">ho R3
+Ip multicast-routing
+
+interface Loopback0
+ ip address 172.16.3.3 255.255.255.255
+!
+!
+interface GigabitEthernet0/1
+ip address 10.77.23.3 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+ no sh
+!
+interface GigabitEthernet0/2
+ip address 10.77.34.3 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+ no sh
+
+interface GigabitEthernet0/3
+ip address 10.77.35.3 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+ no sh
+
+
+router ospf 1
+ router-id 172.16.3.3
+ network 10.77.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="R4" type="SIMPLE" subtype="IOSv" location="111,364">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">ho R4
+Ip multicast-routing
+
+
+interface Loopback0
+ ip address 172.16.4.4 255.255.255.255
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.77.45.4 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 10.100.2.4 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ router-id 172.16.4.4
+ network 10.77.0.0 0.0.255.255 area 0
+ network 10.100.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0
+!         
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip pim rp-address 172.16.2.2
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="R5" type="SIMPLE" subtype="IOSv" location="317,362">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">ho R5
+Ip multicast-routing
+
+interface Loopback0
+ ip address 172.16.5.5 255.255.255.255
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.77.25.5 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 10.77.45.5 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.77.56.5 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ router-id 172.16.5.5
+ network 10.77.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip pim rp-address 172.16.2.2
+
+
+
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="R6" type="SIMPLE" subtype="IOSv" location="594,360">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">ho R6
+ Ip multicast-routing
+
+interface Loopback0
+ ip address 172.16.6.6 255.255.255.255
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.77.36.6 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 10.77.56.6 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.77.67.6 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!         
+router ospf 1
+ router-id 172.16.6.6
+ network 10.77.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0
+!         
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip pim rp-address 172.16.2.2
+
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="R7" type="SIMPLE" subtype="IOSv" location="828,360">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String"> ho R7
+ Ip multicast-routing
+
+interface Loopback0
+ ip address 172.16.7.7 255.255.255.255
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.77.67.7 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 10.100.3.7 255.255.255.0
+ ip pim sparse-mode
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ router-id 172.16.7.7
+ network 10.77.0.0 0.0.255.255 area 0
+ network 10.100.0.0 0.0.255.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0
+!         
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip pim rp-address 172.16.2.2
+
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="SW2" type="SIMPLE" subtype="IOSvL2" location="109,496">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">
+ho SW2
+
+vlan 10
+
+!
+!
+interface GigabitEthernet0/0
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet0/2
+ switchport access vlan 10
+ switchport mode access
+ media-type rj45
+ negotiation auto
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+    </node>
+    <node name="SW3" type="SIMPLE" subtype="IOSvL2" location="825,529">
+        <extensions>
+            <entry key="config" type="String">ho SW3
+
+vlan 10
+
+interface GigabitEthernet0/0
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+ media-type rj45
+ negotiation auto
+!
+interface Vlan10
+ ip address 10.100.3.33 255.255.255.0
+ ip igmp join-group 239.1.1.1
+ ip igmp version 3</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+    </node>
+    <node name="SW1" type="SIMPLE" subtype="IOSvL2" location="589,75">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">ho SW1
+
+vlan 10
+
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+ media-type rj45
+ negotiation auto
+!
+interface Vlan10
+ ip address 10.100.1.11 255.255.255.0
+ ip igmp join-group 239.1.1.1
+ ip igmp version 3
+
+</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+    </node>
+    <node name="R8" type="SIMPLE" subtype="IOSv" location="106,610">
+        <extensions>
+            <entry key="config" type="String">ho R8
+
+
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.100.2.10 255.255.255.0
+ ip igmp join-group 239.2.2.2
+ ip igmp version 3
+ duplex auto
+ speed auto
+ media-type rj45</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet0/1"/>
+    </node>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[2]" src="/virl:topology/virl:node[3]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[1]" src="/virl:topology/virl:node[2]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[2]" src="/virl:topology/virl:node[5]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[7]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[3]" src="/virl:topology/virl:node[10]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[1]" src="/virl:topology/virl:node[8]/virl:interface[2]"/>
+</topology>
